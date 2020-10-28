@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:tabsera/Screens/quran/Quran-Home.dart';
+import 'package:tabsera/athkar/athkar_list.dart';
 import 'package:tabsera/server/quranApi.dart';
 
 class HomePage extends StatefulWidget {
@@ -20,7 +21,7 @@ class _HomePageState extends State<HomePage> {
     GlobalKey<CircularMenuState> key = GlobalKey<CircularMenuState>();
     return Scaffold(
       resizeToAvoidBottomPadding: false,
-      backgroundColor: Color(0xff66677A),
+      backgroundColor: Theme.of(context).primaryColorDark,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -48,14 +49,14 @@ class _HomePageState extends State<HomePage> {
           CircularMenuItem(
             icon: FontAwesomeIcons.quran,
             onTap: () {
-             
+
             EasyLocalization.of(context).locale=Locale("ar", "EG");
             print(EasyLocalization.of(context).locale);
             Navigator.push(context, MaterialPageRoute(builder: (context)=>QHome()));
             },
 
-            color: Colors.green,
-            iconColor: Colors.black,
+            color: Theme.of(context).hoverColor,
+            iconColor: Theme.of(context).primaryColorDark,
             iconSize: ScreenUtil().setWidth(80),
             padding: ScreenUtil().setWidth(30),
           ),
@@ -63,16 +64,16 @@ class _HomePageState extends State<HomePage> {
             icon: FontAwesomeIcons.kaaba,
             onTap: () {
             },
-            color: Colors.yellowAccent.shade700,
-            iconColor: Colors.black,
+            color: Theme.of(context).hoverColor,
+            iconColor: Theme.of(context).primaryColorDark,
             iconSize: ScreenUtil().setWidth(80),
             padding: ScreenUtil().setWidth(30),
           ),
           CircularMenuItem(
             icon: FontAwesomeIcons.mosque,
             onTap: () {},
-            color: Colors.grey,
-            iconColor: Colors.black,
+            color: Theme.of(context).hoverColor,
+            iconColor: Theme.of(context).primaryColorDark,
             iconSize: ScreenUtil().setWidth(80),
             padding: ScreenUtil().setWidth(30),
           ),
@@ -81,16 +82,20 @@ class _HomePageState extends State<HomePage> {
             padding: ScreenUtil().setWidth(30),
             icon: FontAwesomeIcons.pray,
             onTap: () {},
-            color: Colors.redAccent,
-            iconColor: Colors.black,
+            color: Theme.of(context).hoverColor,
+            iconColor: Theme.of(context).primaryColorDark,
           ),
           CircularMenuItem(
-            onTap: () {},
-            color: Colors.deepPurple,
-            iconColor: Colors.black,
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (context) => MenuList()
+              ));
+            },
+            color: Theme.of(context).hoverColor,
+            iconColor: Theme.of(context).primaryColorDark,
             icon: FontAwesomeIcons.prayingHands,
             iconSize: ScreenUtil().setWidth(80),
-            padding: ScreenUtil().setWidth(30),
+            // padding: ScreenUtil().setWidth(30),
           ),
         ],
       ),

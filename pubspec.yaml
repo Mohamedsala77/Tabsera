@@ -37,6 +37,13 @@ dependencies:
   circular_menu: ^1.1.0
   font_awesome_flutter: any
   provider: any
+  bot_toast: ^3.0.4
+  wc_flutter_share: ^0.2.2
+  animated_bottom_navigation_bar: ^0.1.2+2
+  animations: ^1.1.2
+  dynamic_theme: ^1.0.1
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -80,6 +87,11 @@ flutter:
     - family: Tj
       fonts:
         - asset: assets/fonts/Tajawal-ExtraBold.ttf
+        - asset: assets/fonts/Tajawal-Medium.ttf
+    - family: naskh
+      fonts:
+        - asset: assets/fonts/UthmanTN1BVer10.otf
+        - asset: assets/fonts/UthmanTN1Ver10.otf
   # fonts:
   #   - family: Schyler
   #     fonts:
