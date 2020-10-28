@@ -163,6 +163,7 @@ class _FavouriteListState extends State<FavouriteList>
                                           fontSize: 19.0,
                                           fontWeight: FontWeight.w700,
                                         ),
+                                        
                                         maxLines: 2,
                                         textDirection: TextDirection.rtl,
                                         softWrap: true,
@@ -191,7 +192,7 @@ Widget noItems(context) {
       child: Padding(
     padding: const EdgeInsets.only(left: 15.0, right: 15.0),
     child: Text(
-      
+
       "قائمة الأذكار المفضلة فارغة !\nلإضافة الأذكار إلى المفضلة اضغط مطولاً على عنوان هذا الذكر أو الدعاء",
       textScaleFactor: 1.2,
       textDirection: TextDirection.rtl,
