@@ -61,7 +61,7 @@ class _FavouriteListState extends State<FavouriteList>
         children: <Widget>[
           Container(
               alignment: Alignment.topCenter,
-              padding: EdgeInsets.only(top: 64),
+              padding: EdgeInsets.only(top: ScreenUtil().setHeight(100)),
               child: Text(
                 'المفضلة',
                 style: TextStyle(
@@ -163,7 +163,7 @@ class _FavouriteListState extends State<FavouriteList>
                                           fontSize: 19.0,
                                           fontWeight: FontWeight.w700,
                                         ),
-                                        
+
                                         maxLines: 2,
                                         textDirection: TextDirection.rtl,
                                         softWrap: true,
