@@ -89,7 +89,7 @@ class _HomePageState extends State<HomePage> {
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context)=>Athkar()));
             },
-            color: Colors.deepPurple,
+            color: Theme.of(context).bottomAppBarColor,
             iconColor: Colors.black,
             icon: FontAwesomeIcons.prayingHands,
             iconSize: ScreenUtil().setWidth(80),
