@@ -1,11 +1,9 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter_screenutil/screenutil.dart';
 import 'package:tabsera/Screens/HomePage.dart';
 
-import '../main.dart';
 
 class SplashScreen extends StatefulWidget {
   static String id="SplashScreen";
@@ -13,9 +11,8 @@ class SplashScreen extends StatefulWidget {
   _SplashScreenState createState() => _SplashScreenState();
 }
 class _SplashScreenState extends State<SplashScreen> {
-  
-  @override
 
+  @override
 
   void initState() {
     Timer(
