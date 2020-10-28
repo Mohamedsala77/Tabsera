@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:tabsera/Screens/quran/Quran-Home.dart';
+import 'package:tabsera/athkar/athkar.dart';
 import 'package:tabsera/server/quranApi.dart';
 
 class HomePage extends StatefulWidget {
@@ -85,7 +86,9 @@ class _HomePageState extends State<HomePage> {
             iconColor: Colors.black,
           ),
           CircularMenuItem(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Athkar()));
+            },
             color: Colors.deepPurple,
             iconColor: Colors.black,
             icon: FontAwesomeIcons.prayingHands,
