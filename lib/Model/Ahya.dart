@@ -54,6 +54,7 @@ class Ayahs {
     data['manzil'] = this.manzil;
     data['page'] = this.page;
     data['ruku'] = this.ruku;
+    //kjgggggg
     data['hizbQuarter'] = this.hizbQuarter;
     data['sajda'] = this.sajda;
     return data;
