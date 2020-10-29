@@ -41,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
       ),
       Image.asset(
         'assets/images/logo.png',
-        scale: 4,
+        scale: ScreenUtil().setWidth(8),
       ),
           Align(
             alignment: Alignment.bottomCenter,

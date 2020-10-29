@@ -57,7 +57,7 @@ class _ZekrTitleState extends State<ZekrTitle>
             }),
         Container(
           alignment: Alignment.topCenter,
-          padding: EdgeInsets.only(top: 64),
+          padding: EdgeInsets.only(top: ScreenUtil().setHeight(128)),
           child: Text(
             'الأذكار',
             style: TextStyle(
@@ -79,18 +79,18 @@ class _ZekrTitleState extends State<ZekrTitle>
         Padding(
           padding: EdgeInsets.only(top: padding *.21),
           child: ListView.builder(
-              padding: EdgeInsets.only(bottom: 10.0),
+              padding: EdgeInsets.only(bottom: ScreenUtil().setHeight(20)),
               itemCount: this.finalCategoryList.length,
               physics: BouncingScrollPhysics(),
               itemBuilder: (context, index) {
                 return Center(
                     child: Padding(
-                        padding: EdgeInsets.only(left: 10.0, right: 10.0),
+                        padding: EdgeInsets.only(left: ScreenUtil().setWidth(20), right: ScreenUtil().setWidth(20)),
                         child: GestureDetector(
                           child: Stack(
                             children: <Widget>[
                               Container(
-                                margin: EdgeInsets.only(top: 5.0),
+                                margin: EdgeInsets.only(top: ScreenUtil().setHeight(20)),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.only(
                                       topLeft: index == 0
@@ -119,8 +119,8 @@ class _ZekrTitleState extends State<ZekrTitle>
                                     ]),
                                 width: _screenWidth,
                                 height: _screenWidth > _screenHeight
-                                    ? _screenHeight / 10.0 + 3.0
-                                    : _screenHeight / 15.0 + 3.0,
+                                    ? _screenHeight / ScreenUtil().setWidth(20) + ScreenUtil().setWidth(6)
+                                    : _screenHeight / ScreenUtil().setWidth(30) + ScreenUtil().setWidth(6),
                                 child: Stack(
                                   children: [
                                     Positioned(
@@ -170,7 +170,7 @@ class _ZekrTitleState extends State<ZekrTitle>
                                             style: TextStyle(
                                                 color: Theme.of(context)
                                                     .primaryColorDark,
-                                                fontSize: 18.0,
+                                                fontSize: ScreenUtil().setSp(36),
                                                 fontWeight:
                                                 FontWeight.w500),
                                             maxLines: 2,
@@ -245,13 +245,13 @@ class _ZekrTitleState extends State<ZekrTitle>
               type: MaterialType.transparency,
               child: Center(
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(ScreenUtil().setWidth(16)),
                   child: Text(
                     finalCategoryList[index],
                     style: TextStyle(
                         backgroundColor: Theme.of(context).bottomAppBarColor,
                         color: Theme.of(context).hoverColor,
-                        fontSize: 18.0,
+                        fontSize: ScreenUtil().setSp(36),
                         fontWeight: FontWeight.w600,
                         fontFamily: 'Tajawal'),
                     maxLines: 2,

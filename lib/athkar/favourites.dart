@@ -49,14 +49,13 @@ class _FavouriteListState extends State<FavouriteList>
     return Container(
       decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: <Color>[
-              Theme.of(context)
-                  .hoverColor, // The Bright color of the theme
-              Theme.of(context).backgroundColor, // The dark color of the theme
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          )),
+        colors: <Color>[
+          Theme.of(context).hoverColor, // The Bright color of the theme
+          Theme.of(context).backgroundColor, // The dark color of the theme
+        ],
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+      )),
       child: Stack(
         children: <Widget>[
           Container(
@@ -67,10 +66,8 @@ class _FavouriteListState extends State<FavouriteList>
                 style: TextStyle(
                     color: Theme.of(context).primaryColorDark,
                     fontSize: ScreenUtil().setSp(80),
-                    fontFamily: 'Tj'
-                ),
-              )
-          ),
+                    fontFamily: 'Tj'),
+              )),
           Align(
             alignment: Alignment.topLeft,
             child: Tooltip(
@@ -79,15 +76,13 @@ class _FavouriteListState extends State<FavouriteList>
               child: IconButton(
                 icon: Icon(
                   Icons.delete_sweep,
-                  size: 30.0,
+                  size: ScreenUtil().setWidth(60.0),
                   color: Theme.of(context).primaryColorDark,
                 ),
                 onPressed: () {
                   setState(() {
                     FileUtils.clearElements();
                     Navigator.of(context).pop();
-                    // Navigator.of(context).push(
-                    //     MaterialPageRoute(builder: (context) => FavouriteList()));
                     fileContent = '';
                   });
                 },
@@ -95,19 +90,21 @@ class _FavouriteListState extends State<FavouriteList>
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: padding *.2),
+            padding: EdgeInsets.only(top: ScreenUtil().setHeight(200)),
             child: Stack(
               children: <Widget>[
                 Divider(
-                  endIndent: 32,
-                  indent: 32,
+                  endIndent: ScreenUtil().setWidth(62),
+                  indent: ScreenUtil().setWidth(62),
                   thickness: 2,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 8),
+                  padding: EdgeInsets.only(top: ScreenUtil().setHeight(16)),
                   child: ListView.builder(
-                      itemCount: favListItems.isNotEmpty ? favListItems.length : 0,
-                      padding: EdgeInsets.only(right: 10.0, left: 10.0, bottom: 10.0),
+                      itemCount:
+                          favListItems.isNotEmpty ? favListItems.length : 0,
+                      padding: EdgeInsets.only(
+                          right: ScreenUtil().setWidth(20), left: ScreenUtil().setWidth(20), bottom: ScreenUtil().setHeight(20)),
                       physics: BouncingScrollPhysics(),
                       itemBuilder: (context, index) {
                         return GestureDetector(
@@ -126,7 +123,8 @@ class _FavouriteListState extends State<FavouriteList>
                                       ? _screenHeight / 5.0 + 3.0
                                       : _screenHeight / 10.0 + 3.0,
                                   decoration: BoxDecoration(
-                                      color: Theme.of(context).bottomAppBarColor,
+                                      color:
+                                          Theme.of(context).bottomAppBarColor,
                                       borderRadius: BorderRadius.only(
                                         topLeft: index == 0
                                             ? Radius.circular(20.0)
@@ -134,12 +132,14 @@ class _FavouriteListState extends State<FavouriteList>
                                         topRight: index == 0
                                             ? Radius.circular(20.0)
                                             : Radius.circular(1.0),
-                                        bottomLeft: index == favListItems.length - 1
-                                            ? Radius.circular(20.0)
-                                            : Radius.circular(1.0),
-                                        bottomRight: index == favListItems.length - 1
-                                            ? Radius.circular(20.0)
-                                            : Radius.circular(1.0),
+                                        bottomLeft:
+                                            index == favListItems.length - 1
+                                                ? Radius.circular(20.0)
+                                                : Radius.circular(1.0),
+                                        bottomRight:
+                                            index == favListItems.length - 1
+                                                ? Radius.circular(20.0)
+                                                : Radius.circular(1.0),
                                       ),
                                       boxShadow: <BoxShadow>[
                                         BoxShadow(
@@ -151,8 +151,8 @@ class _FavouriteListState extends State<FavouriteList>
                                       ]),
                                   child: Center(
                                       child: Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 4.0, left: 8.0, right: 8.0),
+                                    padding: EdgeInsets.only(
+                                        top: ScreenUtil().setHeight(8), left: ScreenUtil().setWidth(16), right: ScreenUtil().setWidth(16)),
                                     child: Hero(
                                       tag: '${favListItems[index]}',
                                       child: Text(
@@ -160,10 +160,9 @@ class _FavouriteListState extends State<FavouriteList>
                                         textScaleFactor: 1.0,
                                         style: TextStyle(
                                           color: Theme.of(context).primaryColor,
-                                          fontSize: 19.0,
+                                          fontSize: ScreenUtil().setSp(38),
                                           fontWeight: FontWeight.w700,
                                         ),
-
                                         maxLines: 2,
                                         textDirection: TextDirection.rtl,
                                         softWrap: true,
@@ -190,9 +189,8 @@ class _FavouriteListState extends State<FavouriteList>
 Widget noItems(context) {
   return Center(
       child: Padding(
-    padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+    padding: EdgeInsets.only(left: ScreenUtil().setWidth(30), right: ScreenUtil().setWidth(30)),
     child: Text(
-
       "قائمة الأذكار المفضلة فارغة !\nلإضافة الأذكار إلى المفضلة اضغط مطولاً على عنوان هذا الذكر أو الدعاء",
       textScaleFactor: 1.2,
       textDirection: TextDirection.rtl,
