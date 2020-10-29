@@ -42,6 +42,7 @@ dependencies:
   animated_bottom_navigation_bar: ^0.1.2+2
   animations: ^1.1.2
   dynamic_theme: ^1.0.1
+  shifting_tabbar: ^0.3.1
 
 
 dev_dependencies:

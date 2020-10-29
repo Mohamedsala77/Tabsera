@@ -1,6 +1,7 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/screenutil.dart';
 import 'package:wc_flutter_share/wc_flutter_share.dart';
 
 import 'azkar_categories_list.dart';
@@ -86,7 +87,7 @@ class _ZekrListState extends State<ZekrList> {
                     color: Theme.of(context).primaryColorDark,
                     fontWeight: FontWeight.w500,
                     fontFamily: 'Tj',
-                    fontSize: this.category.length > 14 ? 17.0 : 20.0,
+                    fontSize: this.category.length > ScreenUtil().setSp(28) ? ScreenUtil().setSp(34) : ScreenUtil().setSp(40),
                   ),
                   maxLines: 2,
                   textAlign: TextAlign.center,
@@ -134,7 +135,8 @@ class _ZekrListState extends State<ZekrList> {
                     minRadius: 8.0,
                     child: Text(
                       "خط",
-                      style: TextStyle(color: Colors.white, fontSize: 12.0),
+                      style: TextStyle(color: Colors.white,
+                          fontSize: ScreenUtil().setSp(24)),
                     ),
                   ),
                 ),
@@ -157,7 +159,7 @@ class _ZekrListState extends State<ZekrList> {
                         elevation: 0.0,
                         child: Icon(
                           Icons.keyboard_arrow_up,
-                          size: 25.0,
+                          size: ScreenUtil().setWidth(50),
                           color: Colors.white,
                         ),
                         onPressed: () {
@@ -191,7 +193,7 @@ class _ZekrListState extends State<ZekrList> {
                         elevation: 0.0,
                         child: Icon(
                           Icons.keyboard_arrow_down,
-                          size: 25.0,
+                          size: ScreenUtil().setWidth(50),
                           color: Colors.white,
                         ),
                         onPressed: () {
@@ -202,7 +204,7 @@ class _ZekrListState extends State<ZekrList> {
                             _listViewController.animateTo(
                                 _listViewController.offset +
                                     screenHeight -
-                                    150.0,
+                                    ScreenUtil().setHeight(300),
                                 duration: Duration(seconds: 1),
                                 curve: Interval(0.0, 0.9,
                                     curve: Curves.easeInOut));
@@ -225,7 +227,7 @@ class _ZekrListState extends State<ZekrList> {
               Align(
                 alignment: Alignment.center,
                 child: ListView.builder(
-                    padding: EdgeInsets.only(bottom: 15.0, top: 10.0),
+                    padding: EdgeInsets.only(bottom: ScreenUtil().setHeight(30), top: ScreenUtil().setHeight(20)),
                     itemCount: finalmappedData.length,
                     physics: BouncingScrollPhysics(),
                     controller: _listViewController,
@@ -268,8 +270,8 @@ class _ZekrListState extends State<ZekrList> {
                         },
                         child: Center(
                           child: Padding(
-                            padding: const EdgeInsets.only(
-                                top: 6.0, right: 8.0, left: 8.0),
+                            padding: EdgeInsets.only(
+                                top: ScreenUtil().setHeight(12), right: ScreenUtil().setWidth(16), left: ScreenUtil().setWidth(16)),
                             child: Container(
                               height: null,
 
@@ -297,11 +299,11 @@ class _ZekrListState extends State<ZekrList> {
                                 crossAxisAlignment: CrossAxisAlignment.stretch,
                                 children: <Widget>[
                                   Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 20.0,
-                                        left: 12.0,
-                                        right: 12.0,
-                                        bottom: 10.0),
+                                    padding: EdgeInsets.only(
+                                        top: ScreenUtil().setHeight(40),
+                                        left: ScreenUtil().setWidth(24),
+                                        right: ScreenUtil().setWidth(24),
+                                        bottom: ScreenUtil().setWidth(20)),
                                     child: Center(
                                         child: Column(
                                       textDirection: TextDirection.rtl,
@@ -312,18 +314,18 @@ class _ZekrListState extends State<ZekrList> {
                                       children: <Widget>[
                                         Center(
                                           child: Padding(
-                                            padding: const EdgeInsets.only(
-                                                bottom: 8.0,
-                                                right: 8.0,
-                                                left: 8.0),
+                                            padding: EdgeInsets.only(
+                                                bottom: ScreenUtil().setHeight(16),
+                                                right: ScreenUtil().setWidth(16),
+                                                left: ScreenUtil().setWidth(16)),
                                             child: Text(
                                               finalmappedData[index]["zekr"],
                                               textDirection: TextDirection.rtl,
                                               textAlign: TextAlign.justify,
                                               style: TextStyle(
                                                   fontSize: newFont == 'Tj'
-                                                      ? 20.0
-                                                      : 18.0,
+                                                      ? ScreenUtil().setSp(40)
+                                                      : ScreenUtil().setSp(36),
                                                   fontWeight:
                                                       newFont == 'Tj'
                                                           ? FontWeight.normal
@@ -339,10 +341,9 @@ class _ZekrListState extends State<ZekrList> {
                                         ),
                                         Center(
                                           child: Padding(
-                                            padding: const EdgeInsets.only(
-                                                bottom: 0.0,
-                                                right: 8.0,
-                                                left: 8.0),
+                                            padding: EdgeInsets.only(
+                                                right: ScreenUtil().setWidth(16),
+                                                left: ScreenUtil().setWidth(16)),
                                             child: Wrap(
                                               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                               children: [
@@ -355,8 +356,8 @@ class _ZekrListState extends State<ZekrList> {
                                                     textAlign: TextAlign.justify,
                                                     style: TextStyle(
                                                         fontSize: newFont == 'Tj'
-                                                            ? 16.0
-                                                            : 14.0,
+                                                            ? ScreenUtil().setSp(32)
+                                                            : ScreenUtil().setSp(32),
                                                         fontWeight:
                                                             newFont == 'Tj'
                                                                 ? FontWeight.w400
@@ -393,12 +394,12 @@ class _ZekrListState extends State<ZekrList> {
                                     )),
                                   ),
                                   SizedBox(
-                                    height: 8.0,
+                                    height: ScreenUtil().setHeight(16),
                                   ),
                                   Container(
                                     color: Theme.of(context).primaryColorLight,
                                     child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
+                                      padding: EdgeInsets.all(ScreenUtil().setHeight(16)),
                                       child: Text(
                                         finalmappedData[index]["description"],
                                         textAlign: TextAlign.center,
@@ -414,7 +415,7 @@ class _ZekrListState extends State<ZekrList> {
                                     height: 8.0,
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.only(bottom: 8.0),
+                                    padding: EdgeInsets.only(bottom: ScreenUtil().setHeight(16)),
                                     child: Container(
                                       width: null,
                                       height: null,
@@ -429,17 +430,17 @@ class _ZekrListState extends State<ZekrList> {
                                         ),
                                       ),
                                       constraints: BoxConstraints(
-                                          minWidth: 80.0,
-                                          maxWidth: 80.0,
-                                          minHeight: 30.0,
-                                          maxHeight: 35.0),
+                                          minWidth: ScreenUtil().setWidth(160),
+                                          maxWidth: ScreenUtil().setWidth(160),
+                                          minHeight: ScreenUtil().setHeight(60),
+                                          maxHeight: ScreenUtil().setHeight(70)),
                                       child: Center(
                                         child: Text(
                                           arabicNumber, //ddddd
                                           style: TextStyle(
                                               color: Colors.white,
                                               fontWeight: FontWeight.bold,
-                                              fontSize: 14.0),
+                                              fontSize: ScreenUtil().setSp(28)),
                                         ),
                                       ),
                                     ),

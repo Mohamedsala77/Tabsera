@@ -5,7 +5,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:tabsera/Screens/quran/Quran-Home.dart';
+import 'package:tabsera/Screens/quran/quranList.dart';
+import 'package:tabsera/Screens/quran/surah.dart';
 import 'package:tabsera/athkar/athkar.dart';
+import 'package:tabsera/athkar/athkar_list.dart';
 import 'package:tabsera/server/quranApi.dart';
 
 class HomePage extends StatefulWidget {
@@ -21,26 +24,26 @@ class _HomePageState extends State<HomePage> {
     GlobalKey<CircularMenuState> key = GlobalKey<CircularMenuState>();
     return Scaffold(
       resizeToAvoidBottomPadding: false,
-      backgroundColor: Color(0xff66677A),
+      backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        toolbarHeight: ScreenUtil().setHeight(200),
+        toolbarHeight: ScreenUtil().setHeight(300),
         centerTitle: true,
-        title: Text(
-          "appname".tr(),
-          style: TextStyle(
-              fontFamily: "Tj",
-              color: Colors.white,
-              fontSize: ScreenUtil().setSp(55)),
+        title: Padding(
+          padding: const EdgeInsets.only(top: 64),
+          child: Image.asset(
+            'assets/images/logo.png',
+            scale: 4,
+          ),
         ),
       ),
       body: CircularMenu(
         animationDuration: Duration(milliseconds: 1500),
         toggleButtonPadding: ScreenUtil().setWidth(50),
         toggleButtonSize: ScreenUtil().setWidth(80),
-        toggleButtonColor: Colors.white,
-        toggleButtonIconColor: Colors.black,
+        toggleButtonColor: Theme.of(context).primaryColorDark,
+        toggleButtonIconColor: Theme.of(context).backgroundColor,
         alignment: Alignment.center,
         startingAngleInRadian: 2 * pi,
         endingAngleInRadian: 2 * pi,
@@ -52,11 +55,11 @@ class _HomePageState extends State<HomePage> {
              
             EasyLocalization.of(context).locale=Locale("ar", "EG");
             print(EasyLocalization.of(context).locale);
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>QHome()));
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>QuranList()));
             },
 
-            color: Colors.green,
-            iconColor: Colors.black,
+            color: Theme.of(context).bottomAppBarColor,
+            iconColor: Theme.of(context).primaryColorDark,
             iconSize: ScreenUtil().setWidth(80),
             padding: ScreenUtil().setWidth(30),
           ),
@@ -64,16 +67,16 @@ class _HomePageState extends State<HomePage> {
             icon: FontAwesomeIcons.kaaba,
             onTap: () {
             },
-            color: Colors.yellowAccent.shade700,
-            iconColor: Colors.black,
+            color: Theme.of(context).bottomAppBarColor,
+            iconColor: Theme.of(context).primaryColorDark,
             iconSize: ScreenUtil().setWidth(80),
             padding: ScreenUtil().setWidth(30),
           ),
           CircularMenuItem(
             icon: FontAwesomeIcons.mosque,
             onTap: () {},
-            color: Colors.grey,
-            iconColor: Colors.black,
+            color: Theme.of(context).bottomAppBarColor,
+            iconColor: Theme.of(context).primaryColorDark,
             iconSize: ScreenUtil().setWidth(80),
             padding: ScreenUtil().setWidth(30),
           ),
@@ -82,15 +85,15 @@ class _HomePageState extends State<HomePage> {
             padding: ScreenUtil().setWidth(30),
             icon: FontAwesomeIcons.pray,
             onTap: () {},
-            color: Colors.redAccent,
-            iconColor: Colors.black,
+            color: Theme.of(context).bottomAppBarColor,
+            iconColor: Theme.of(context).primaryColorDark,
           ),
           CircularMenuItem(
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>Athkar()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>MenuList()));
             },
             color: Theme.of(context).bottomAppBarColor,
-            iconColor: Colors.black,
+            iconColor: Theme.of(context).primaryColorDark,
             icon: FontAwesomeIcons.prayingHands,
             iconSize: ScreenUtil().setWidth(80),
             padding: ScreenUtil().setWidth(30),
