@@ -5,6 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:tabsera/Screens/quran/Quran-Home.dart';
+import 'package:tabsera/Screens/quran/quranList.dart';
+import 'package:tabsera/Screens/quran/surah.dart';
 import 'package:tabsera/athkar/athkar.dart';
 import 'package:tabsera/athkar/athkar_list.dart';
 import 'package:tabsera/server/quranApi.dart';
@@ -53,7 +55,7 @@ class _HomePageState extends State<HomePage> {
              
             EasyLocalization.of(context).locale=Locale("ar", "EG");
             print(EasyLocalization.of(context).locale);
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>QHome()));
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>QuranList()));
             },
 
             color: Theme.of(context).bottomAppBarColor,
