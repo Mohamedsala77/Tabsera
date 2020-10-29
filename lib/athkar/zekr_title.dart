@@ -47,6 +47,14 @@ class _ZekrTitleState extends State<ZekrTitle>
     double padding = MediaQuery.of(context).size.height;
     return Stack(
       children: [
+        IconButton(
+            icon: Icon(
+              Icons.arrow_back,
+              color: Theme.of(context).primaryColorDark,
+            ),
+            onPressed: () {
+              Navigator.of(context).pop();
+            }),
         Container(
           alignment: Alignment.topCenter,
           padding: EdgeInsets.only(top: 64),
