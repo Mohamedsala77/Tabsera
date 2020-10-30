@@ -17,7 +17,7 @@ class _QHomeState extends State<QHome> {
     QuranServer quranServer = QuranServer();
     return Scaffold(
         appBar: AppBar(
-          title: Text("قرأن كريم"),
+          title: Text("القرآن الكريم"),
         ),
         body: Container(
           child: Text(widget.surah.name)

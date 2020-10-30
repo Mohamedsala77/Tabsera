@@ -58,6 +58,7 @@ class _SorahListState extends State<SorahList> {
                               SizedBox(
                                 width:  ScreenUtil().setWidth(30),
                               ),
+
                               Container(
                                 height:  ScreenUtil().setHeight(30),
                                 width:  ScreenUtil().setWidth(5),
