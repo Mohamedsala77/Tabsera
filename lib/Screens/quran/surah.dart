@@ -38,8 +38,8 @@ class _SorahListState extends State<SorahList> {
                           Row(
                             children: [
                               Container(
-                                height:  ScreenUtil().setWidth(30),
-                                width:  ScreenUtil().setWidth(30),
+                                height:  ScreenUtil().setWidth(70),
+                                width:  ScreenUtil().setWidth(70),
                                 alignment: Alignment.center,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
@@ -52,18 +52,10 @@ class _SorahListState extends State<SorahList> {
                                   surah[index].number.toString(),
                                   textAlign: TextAlign.start,
                                   style: TextStyle(
-                                      fontSize:  ScreenUtil().setSp(30), color: Color(0xff457b9d)),
+                                      fontSize:  ScreenUtil().setSp(36), color: Color(0xff457b9d)),
                                 ),
                               ),
-                              SizedBox(
-                                width:  ScreenUtil().setWidth(30),
-                              ),
 
-                              Container(
-                                height:  ScreenUtil().setHeight(30),
-                                width:  ScreenUtil().setWidth(5),
-                                color: Color(0xff457b9d),
-                              ),
                               SizedBox(
                                 width: ScreenUtil().setWidth(30),
                               ),
@@ -71,7 +63,7 @@ class _SorahListState extends State<SorahList> {
                                 surah[index].name.toString(),
                                 textAlign: TextAlign.start,
                                 style: TextStyle(
-                                  fontSize: ScreenUtil().setSp(30),
+                                  fontSize: ScreenUtil().setSp(40),
                                   color: Color(0xff1d3557),
                                 ),
                               ),

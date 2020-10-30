@@ -20,7 +20,7 @@ class _QHomeState extends State<QHome> {
           title: Text("القرآن الكريم"),
         ),
         body: Container(
-          child: Text(widget.surah.name)
+            child: Text(widget.surah.name)
         ));
   }
   Widget ayaNum(String num, context, Color color) {
@@ -56,5 +56,3 @@ class _QHomeState extends State<QHome> {
     );
   }
 }
-
-

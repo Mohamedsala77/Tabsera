@@ -53,10 +53,10 @@ class _HomePageState extends State<HomePage> {
             icon: FontAwesomeIcons.quran,
             onTap: () {
 
-              
-            EasyLocalization.of(context).locale=Locale("ar", "EG");
-            print(EasyLocalization.of(context).locale);
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>QuranList()));
+
+              EasyLocalization.of(context).locale=Locale("ar", "EG");
+              print(EasyLocalization.of(context).locale);
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>QuranList()));
             },
 
             color: Theme.of(context).bottomAppBarColor,

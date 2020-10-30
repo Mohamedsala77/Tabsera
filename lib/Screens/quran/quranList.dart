@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:shifting_tabbar/shifting_tabbar.dart';
 import 'package:dynamic_theme/dynamic_theme.dart';
@@ -12,14 +13,14 @@ class QuranList extends StatelessWidget {
       child: Scaffold(
         appBar: ShiftingTabBar(
           labelStyle: TextStyle(
-            fontSize: 20,
-            fontFamily: 'Tj'
+              fontSize: 20,
+              fontFamily: 'Tj'
           ),
           color: Theme.of(context).primaryColorDark,
           tabs: <ShiftingTab>[
             ShiftingTab(
               icon: Icon(Icons.home,
-              color: Theme.of(context).backgroundColor,),
+                color: Theme.of(context).backgroundColor,),
               text: 'السور',
             ),
             ShiftingTab(
