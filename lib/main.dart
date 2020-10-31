@@ -1,3 +1,4 @@
+
 import 'package:device_preview/device_preview.dart';
 import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +9,7 @@ import 'Splashs/SplashScreen.dart';
 void main() {
   runApp(
       EasyLocalization(
-        child:Home(),
+        child:DevicePreview(builder: (context)=>Home()),
         path: "assets",
         saveLocale: true,
         supportedLocales: [

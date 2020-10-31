@@ -22,7 +22,7 @@ class _SorahListState extends State<SorahList> {
             List<Surah> surah = snapshot.data;
             return ListView.builder(
               physics: const AlwaysScrollableScrollPhysics(),
-              itemCount: 114,
+              itemCount: surah.length,
               itemBuilder: (BuildContext context, int index) {
                 return GestureDetector(
                   child: Container(
@@ -97,6 +97,9 @@ class _SorahListState extends State<SorahList> {
                         MaterialPageRoute(
                             builder: ((context) => QHome(
                               surah: surah[index],
+                              nomPageF: surah[index].ayahs.first.page,
+                              nomPageL: surah[index].ayahs.last.page,
+
                               // surah: surah[index],
                             ))));
                   },

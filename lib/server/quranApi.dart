@@ -6,7 +6,7 @@ import 'package:tabsera/Model/QuranModel.dart';
 class QuranServer {
   Future<List<Surah>> QuranData() async {
     final response =
-        await http.get("https://api.alquran.cloud/v1/quran/quran-uthmani");
+        await http.get("https://api.alquran.cloud/v1/quran/ar.alafasy");
     if (response.statusCode == 200) {
       var jsonData = jsonDecode(response.body);
       var data = jsonData["data"]["surahs"];
