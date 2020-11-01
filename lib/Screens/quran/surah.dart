@@ -84,7 +84,9 @@ class _SorahListState extends State<SorahList> {
                                       ? Color(0xff1d3557)
                                       : Color(0xff457b9d))),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              //Audio for Surah ...........
+                            },
                           ),
                         ],
                       ),
