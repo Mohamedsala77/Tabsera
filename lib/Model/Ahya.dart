@@ -8,6 +8,7 @@ class Ayahs {
   int ruku;
   int hizbQuarter;
   bool sajda;
+  String audio;
 
   Ayahs(
       {int number,
@@ -20,7 +21,8 @@ class Ayahs {
         int page,
         int ruku,
         int hizbQuarter,
-        bool sajda}) {
+        bool sajda,}) {
+
     this.number = number;
     this.text = text;
     this.numberInSurah = numberInSurah;
@@ -30,6 +32,7 @@ class Ayahs {
     this.ruku = ruku;
     this.hizbQuarter = hizbQuarter;
     this.sajda = sajda;
+    this.audio=audio;
   }
 
 
@@ -42,6 +45,8 @@ class Ayahs {
     manzil = json['manzil'];
     page = json['page'];
     ruku = json['ruku'];
+    audio = json['audio'];
+
     hizbQuarter = json['hizbQuarter'];
   }
 
@@ -54,8 +59,7 @@ class Ayahs {
     data['manzil'] = this.manzil;
     data['page'] = this.page;
     data['ruku'] = this.ruku;
-    //kjgggggg
-    //555555
+    data['audio'] = this.audio;
     data['hizbQuarter'] = this.hizbQuarter;
     data['sajda'] = this.sajda;
     return data;

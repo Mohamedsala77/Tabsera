@@ -52,8 +52,6 @@ class _HomePageState extends State<HomePage> {
           CircularMenuItem(
             icon: FontAwesomeIcons.quran,
             onTap: () {
-
-              
             EasyLocalization.of(context).locale=Locale("ar", "EG");
             print(EasyLocalization.of(context).locale);
             Navigator.push(context, MaterialPageRoute(builder: (context)=>QuranList()));

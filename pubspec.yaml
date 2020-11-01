@@ -43,6 +43,9 @@ dependencies:
   animations: ^1.1.2
   dynamic_theme: ^1.0.1
   shifting_tabbar: ^0.3.1
+  quiver: ^2.1.4+1
+  shared_preferences: ^0.5.12+2
+  event_bus: ^1.1.1
 
 
 dev_dependencies:
