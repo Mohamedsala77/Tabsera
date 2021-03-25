@@ -1,8 +1,6 @@
-import 'package:device_preview/device_preview.dart';
 import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter_screenutil/screenutil.dart';
 import 'Splashs/SplashScreen.dart';
 
 void main() {
@@ -23,8 +21,7 @@ class Home extends StatelessWidget {
     return DynamicTheme(
       defaultBrightness: Brightness.light,
       data: (brightness) {
-        return brightness == Brightness.light
-            ? ThemeData(
+        return brightness == Brightness.light ? ThemeData(
                 primaryColorDark: Color(0xff114b5f),
                 primaryColor: Color(0xff1a936f),
                 primaryColorLight: Color(0xff88d498),
@@ -45,7 +42,6 @@ class Home extends StatelessWidget {
       themedWidgetBuilder: (context, data) => MaterialApp(
         theme: data,
         debugShowCheckedModeBanner: false,
-        builder: DevicePreview.appBuilder,
         initialRoute: SplashScreen.id,
         routes: {
           SplashScreen.id: (context) => SplashScreen(),

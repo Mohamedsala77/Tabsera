@@ -14,6 +14,10 @@ class QuranServer {
       for (int i = 0; i < data.length; i++) {
         surahs.add(Surah.fromJson(data[i]));
       }
+      print("surahs[0].name.toString()");
+
+      print(surahs[0].name.toString());
+
       return surahs;
     } else {
       throw Exception('Failed to load ');

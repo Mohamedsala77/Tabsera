@@ -28,24 +28,27 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
-  easy_localization: ^2.3.3
-  flutter_screenutil: ^3.1.1
+  easy_localization: any
+  flutter_screenutil: any
   splashscreen: any
-  device_preview: ^0.4.5
-  assets_audio_player: ^2.0.10
+  assets_audio_player: any
   http: ^0.12.2
-  circular_menu: ^1.1.0
+  circular_menu: any
   font_awesome_flutter: any
+  audioplayers: any
+  audioplayer_web: any
   provider: any
-  bot_toast: ^3.0.4
-  wc_flutter_share: ^0.2.2
-  animated_bottom_navigation_bar: ^0.1.2+2
+  bot_toast: any
+  wc_flutter_share: any
+  animated_bottom_navigation_bar: any
   animations: ^1.1.2
-  dynamic_theme: ^1.0.1
-  shifting_tabbar: ^0.3.1
-  quiver: ^2.1.4+1
-  shared_preferences: ^0.5.12+2
-  event_bus: ^1.1.1
+  dynamic_theme: any
+  video_player: any
+  shifting_tabbar: any
+  quiver: any
+  shared_preferences: any
+  event_bus: any
+  flutter_circular_slider: any
 
 
 dev_dependencies:
@@ -69,7 +72,10 @@ flutter:
     - assets/ar-EG.json
     - assets/en-US.json
     - assets/images/
-    - assets/audio/
+    - assets/audio/1.mp3
+    - assets/audio/2.mp3
+    - assets/big_buck_bunny_720p_10mb (1).flv
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
